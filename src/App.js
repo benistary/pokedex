@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './assets/css/App.css';
-import axios from 'axios';
+import * as actions from './actions';
 
 class App extends Component {
 
   componentWillMount() {
-    axios.get('https://pokeapi.co/api/v2/pokemon/?limit=9').then((res) => {
-      console.log(res);
-    });
+    this.props.fetchAllPokemons(9);
   }
 
   render() {
@@ -18,4 +17,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, actions)(App);
