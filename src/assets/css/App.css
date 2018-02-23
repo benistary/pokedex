@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: "Gill Sans", sans-serif; }
 
 a {
   text-decoration: none; }
@@ -112,6 +113,9 @@ a {
       left: 0; }
   .pokedex__view {
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -260,6 +264,12 @@ a {
       height: 25px;
       background: radial-gradient(#1a1a1a, #272727);
       z-index: 6; }
+
+.view__name {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin: 0 0 20px 0; }
 
 .spinner {
   width: 32px;

@@ -9,7 +9,9 @@ class Pokedex extends Component {
     if (showSpinner) {
       return <Spinner />;
     } else {
-      return <View pokemon={pokemon}></View>;
+      if ( pokemon.name !== '' && pokemon.image !== '' ) {
+        return <View pokemon={pokemon}></View>;
+      }
     }
   }
 

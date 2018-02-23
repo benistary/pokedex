@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.props.fetchAllPokemons(2);
+    this.props.fetchAllPokemons(5);
   }
 
   componentWillReceiveProps(nextProps) {
