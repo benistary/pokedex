@@ -3,5 +3,9 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 @import "Pokedex.scss";
 @import "View.scss";

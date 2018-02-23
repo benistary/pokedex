@@ -8,31 +8,34 @@ import './assets/css/App.css';
 class App extends Component {
 
   componentWillMount() {
-    this.props.fetchAllPokemons(3);
+    this.props.fetchAllPokemons(2);
   }
 
-  renderName() {
-    const { list } = this.props.pokemons;
-    list.map((pokemon) => {
-      console.log(pokemon.data);
-    });
+  handleLeftButton(e) {
+    e.preventDefault();
+    console.log('left');
+  }
+
+  handleRightButton(e) {
+    e.preventDefault();
+    console.log('right');
   }
 
   render() {
-    const { list } = this.props.pokemons;
+    const { pokemon } = this.props;
+    console.log(pokemon);
     return (
-
       <div className="App">
-        <ul>{this.renderName()}</ul>
-        <Pokedex />
+        <Pokedex pokemon={pokemon} left={this.handleLeftButton} right={this.handleRightButton} />
       </div>
     );
   }
 }
 
 const MapStateToProps = state => {
+  console.log(state);
   return {
-    pokemons: state.pokemons
+    pokemon: state.pokemons.pokemon
   };
 }
 

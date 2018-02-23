@@ -3,6 +3,7 @@ import View from './View';
 
 class Pokedex extends Component {
   render() {
+    const { pokemon, left, right } = this.props;
     return(
       <div className="pokedex">
         <div className="pokedex__panel-left">
@@ -19,16 +20,16 @@ class Pokedex extends Component {
           <div className="pokedex__display">
             <div className="pokedex__view">
               <div className="pokedex__button-3"></div>
-              <View></View>
+              <View pokemon={pokemon}></View>
             </div>
           </div>
           <div className="pokedex__button-4"></div>
           <div className="pokedex__arrows">
-            <div class="pokedex__arrows--top"></div>
-            <div class="pokedex__arrows--right"></div>
-            <div class="pokedex__arrows--bottom"></div>
-            <div class="pokedex__arrows--left"></div>
-            <div class="pokedex__arrows--mid"></div>
+            <div className="pokedex__arrows--top"></div>
+            <a href="#" onClick={right}><div className="pokedex__arrows--right"></div></a>
+            <div className="pokedex__arrows--bottom"></div>
+            <a href="#" onClick={left}><div className="pokedex__arrows--left"></div></a>
+            <div className="pokedex__arrows--mid"></div>
           </div>
         </div>
         <div className="pokedex__panel-right">

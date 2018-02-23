@@ -5,8 +5,14 @@
   left: 20px;
   width: 260px;
   height: 190px;
-  padding: 15px;
+  padding: 0 auto;
   background-color: #fbfbfb;
   border: 4px solid #4e4e4e;
   border-radius: 30px;
+  text-align: center;
+  vertical-align: middle;
+
+  &__image {
+
+  }
 }
