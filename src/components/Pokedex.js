@@ -9,9 +9,7 @@ class Pokedex extends Component {
     if (showSpinner) {
       return <Spinner />;
     } else {
-      if ( pokemon.name !== '' && pokemon.image !== '' ) {
-        return <View pokemon={pokemon}></View>;
-      }
+      return <View pokemon={pokemon}></View>;
     }
   }
 
@@ -38,10 +36,10 @@ class Pokedex extends Component {
           </div>
           <div className="pokedex__button-4"></div>
           <div className="pokedex__arrows">
-            <div className="pokedex__arrows--top"></div>
-            <a href="#" onClick={right}><div className="pokedex__arrows--right"></div></a>
-            <div className="pokedex__arrows--bottom"></div>
-            <a href="#" onClick={left}><div className="pokedex__arrows--left"></div></a>
+            <button className="pokedex__arrow" onClick={right}><div className="pokedex__arrows--top"></div></button>
+            <button className="pokedex__arrow" onClick={right}><div className="pokedex__arrows--right"></div></button>
+            <button className="pokedex__arrow" onClick={left}><div className="pokedex__arrows--bottom"></div></button>
+            <button className="pokedex__arrow" onClick={left}><div className="pokedex__arrows--left"></div></button>
             <div className="pokedex__arrows--mid"></div>
           </div>
         </div>

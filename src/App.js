@@ -11,12 +11,10 @@ class App extends Component {
     this.state = {
       showSpinner: true
     }
-    this.handleLeftButton = this.handleLeftButton.bind(this);
-    this.handleRightButton = this.handleRightButton.bind(this);
   }
 
   componentWillMount() {
-    this.props.fetchAllPokemons(5);
+    this.props.fetchPokemons(9);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,14 +28,8 @@ class App extends Component {
     }
   }
 
-  handleLeftButton(e) {
-    e.preventDefault();
-    this.props.switchBetweenPokemons('left');
-  }
-
-  handleRightButton(e) {
-    e.preventDefault();
-    this.props.switchBetweenPokemons('right')
+  handleButton(direction) {
+    this.props.switchBetweenPokemons(direction);
   }
 
   render() {
@@ -45,14 +37,13 @@ class App extends Component {
     const { showSpinner } = this.state;
     return (
       <div className="App">
-        <Pokedex pokemon={pokemon} showSpinner={showSpinner} left={this.handleLeftButton} right={this.handleRightButton} />
+        <Pokedex pokemon={pokemon} showSpinner={showSpinner} left={this.handleButton.bind(this,'left')} right={this.handleButton.bind(this,'right')} />
       </div>
     );
   }
 }
 
 const MapStateToProps = state => {
-  console.log(state);
   return {
     pokemon: state.pokemons.pokemon
   };

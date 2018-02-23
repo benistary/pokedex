@@ -5,4 +5,42 @@
     font-weight: 700;
     margin: 0 0 20px 0;
   }
+
+  &__image {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__name {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__animation-appear {
+    opacity: 0.1;
+    &.view__animation-appear-active {
+      opacity: 1;
+      transition: opacity .3s ease-in;
+    }
+  }
+
+  &__animation-enter {
+    opacity: 0;
+    &.view__animation-enter-active {
+      opacity: 1;
+      transition: opacity .3s ease-in;
+    }
+  }
+
+  &__animation-leave {
+    opacity: 1;
+    &.view__animation-leave-active {
+      opacity: 0;
+      transition: opacity .3s ease-in;
+    }
+  }
 }

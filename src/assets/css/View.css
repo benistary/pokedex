@@ -3,3 +3,33 @@
   text-transform: capitalize;
   font-weight: 700;
   margin: 0 0 20px 0; }
+
+.view__image {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.view__name {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.view__animation-appear {
+  opacity: 0.1; }
+  .view__animation-appear.view__animation-appear-active {
+    opacity: 1;
+    transition: opacity .3s ease-in; }
+
+.view__animation-enter {
+  opacity: 0; }
+  .view__animation-enter.view__animation-enter-active {
+    opacity: 1;
+    transition: opacity .3s ease-in; }
+
+.view__animation-leave {
+  opacity: 1; }
+  .view__animation-leave.view__animation-leave-active {
+    opacity: 0;
+    transition: opacity .3s ease-in; }
