@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import View from './View';
+import Spinner from './Spinner';
 
 class Pokedex extends Component {
+
+  returnElement() {
+    const { showSpinner, pokemon } = this.props;
+    if (showSpinner) {
+      return <Spinner />;
+    } else {
+      return <View pokemon={pokemon}></View>;
+    }
+  }
+
   render() {
-    const { pokemon, left, right } = this.props;
+    const { left, right } = this.props;
     return(
       <div className="pokedex">
         <div className="pokedex__panel-left">
@@ -18,10 +29,10 @@ class Pokedex extends Component {
             <li><div className="pokedex__button-2 pokedex__button-2--green"></div></li>
           </ul>
           <div className="pokedex__display">
-            <div className="pokedex__view">
               <div className="pokedex__button-3"></div>
-              <View pokemon={pokemon}></View>
-            </div>
+              <div className="pokedex__view">
+                {this.returnElement()}
+              </div>
           </div>
           <div className="pokedex__button-4"></div>
           <div className="pokedex__arrows">
