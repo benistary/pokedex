@@ -1,0 +1,101 @@
+.pokedex {
+  position: relative;
+  width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  z-index: 0;
+
+  &__panel {
+
+    &-left  {
+      position: relative;
+      float: left;
+      width: 400px;
+      height: 500px;
+      background-color: #b6033f;
+      border-radius: 30px 0 0 30px;
+      z-index: 1;
+    }
+
+    &-right {
+      position: relative;
+      float: right;
+      bottom: 0;
+      width: 400px;
+      height: 400px;
+      background-color: #D10046;
+      border-radius: 0 0 30px 0;
+      z-index: 1;
+    }
+  }
+
+  &__wrapper {
+
+    &-left {
+      position: absolute;
+      top: 120px;
+      width: 340px;
+      height: 380px;
+      background-color: #D10046;
+      z-index: 2;
+    }
+  }
+
+  &__curve {
+
+    &-left {
+      position: absolute;
+      top: 48px;
+      left: 0;
+      height: 80px;
+      width: 186px;
+      background-color: #b6033f;
+      border-radius: 0 0 67px 0;
+      z-index: 4;
+    }
+
+    &-right {
+      position: absolute;
+      top: 70px;
+      right: 60px;
+      width: 170px;
+      height: 50px;
+      background-color: #D10046;
+      border-radius: 67px 0 0 0;
+      z-index: 3;
+    }
+  }
+
+  &__radius-fill {
+    &-1 {
+      position: absolute;
+      top: 95px;
+      left: 149px;
+      height: 30px;
+      width: 30px;
+      background-color: #D10046;
+    }
+  }
+
+  &__display {
+    position: absolute;
+    top: 160px;
+    left: 20px;
+    width: 300px;
+    height: 250px;
+    background-color: #e3e3e3;
+    border-radius: 30px;
+    z-index: 5;
+
+    &::after {
+      content: "";
+      border-top: 40px solid #e3e3e3;
+      border-left: 40px solid #D10046;
+      height: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+}
