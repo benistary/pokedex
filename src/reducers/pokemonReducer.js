@@ -1,13 +1,13 @@
 import { POKEMONS } from '../actions/types';
 
 const INITIAL_STATE = {
-  pokemons: {}
+  list: []
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case POKEMONS:
-      return { ...state, pokemons: action.payload };
+      return { ...state, list: action.payload };
     default:
       return state;
   }

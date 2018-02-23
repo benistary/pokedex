@@ -8,15 +8,22 @@ import './assets/css/App.css';
 class App extends Component {
 
   componentWillMount() {
-    this.props.fetchAllPokemonsAndSetCurrent(9);
+    this.props.fetchAllPokemons(3);
+  }
 
+  renderName() {
+    const { list } = this.props.pokemons;
+    list.map((pokemon) => {
+      console.log(pokemon.data);
+    });
   }
 
   render() {
-    const { pokemons } = this.props;
-    console.log(pokemons);
+    const { list } = this.props.pokemons;
     return (
+
       <div className="App">
+        <ul>{this.renderName()}</ul>
         <Pokedex />
       </div>
     );
